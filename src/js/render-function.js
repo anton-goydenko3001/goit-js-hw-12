@@ -3,7 +3,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 
 export function galleryMarkup(images) {
   const gallery = document.querySelector('.gallery');
-  const markup = images.hits
+  const markup = images
     .map(hit => {
       return `<li class="gallery-item">
             <a class="gallery-link" href="${hit.largeImageURL}" download=false>
@@ -31,7 +31,7 @@ export function galleryMarkup(images) {
             `;
     })
     .join('');
-  gallery.innerHTML = markup;
+  gallery.insertAdjacentHTML('beforeend', markup);
 }
 
 export function showMessage(message) {
@@ -41,11 +41,9 @@ export function showMessage(message) {
 }
 
 export function showLoader() {
-  const loader = document.querySelector('.loader');
-  loader.classList.remove('visually-hidden');
+  document.querySelector('.loader').classList.remove('visually-hidden');
 }
 
 export function hideLoader() {
-  const loader = document.querySelector('.loader');
-  loader.classList.add('visually-hidden');
+  document.querySelector('.loader').classList.add('visually-hidden');
 }

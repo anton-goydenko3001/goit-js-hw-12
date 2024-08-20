@@ -7,7 +7,7 @@
   font-weight: 400;
 
   color: #242424;
-  background-color: rgba(135, 215, 242, 0.87);
+  background-color: rgba(147, 177, 187, 0.87);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -64,10 +64,39 @@ input[name='query']:focus {
   border: none;
   width: 91px;
   height: 40px;
+  box-shadow: 0 5px 15px 0 rgba(11, 99, 246, 1);
+  transition: 0.5s;
 }
 
 .form-button:hover {
   background-color: #b84fbd;
+  transform: translate(0, -3px);
+  box-shadow: 0 20px 40px 0 rgb(234, 81, 239);
+}
+
+.load-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background: #4e75ff;
+  border-radius: 8px;
+  padding: 8px 16px;
+  outline: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #fff;
+  border: none;
+  box-shadow: 0 5px 15px 0 rgba(11, 99, 246, 1);
+  transition: 0.5s;
+}
+
+.load-more:hover {
+  background-color: #b84fbd;
+  transform: translate(0, -3px);
+  box-shadow: 0 20px 40px 0 rgb(234, 81, 239);
 }
 
 .gallery {
@@ -154,20 +183,19 @@ input[name='query']:focus {
 }
 
 .loader {
-  display: block;
-  margin: 0px auto;
-  animation: rotate 1s infinite;
-  height: 50px;
-  width: 50px;
-}
-
-.loader {
   width: 48px;
   height: 48px;
+  /* border: 3px solid #fff; */
   border-radius: 50%;
+  /* display: inline-block; */
   position: relative;
-  animation: rotate 1s linear infinite;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 .loader::before,
 .loader::after {
   content: '';
@@ -175,7 +203,7 @@ input[name='query']:focus {
   position: absolute;
   inset: 0px;
   border-radius: 50%;
-  border: 5px solid #fff;
+  border: 5px solid #ffffff;
   animation: prixClipFix 2s linear infinite;
 }
 .loader::after {
@@ -211,6 +239,12 @@ input[name='query']:focus {
   }
 }
 
-.intro {
-  height: 800px;
+.gallery-item {
+  transition: 0.5s;
+  box-shadow: 10px 10px 20px 5px rgb(71, 103, 157);
+}
+
+.gallery-item:hover {
+  transform: translate(0, -3px);
+  box-shadow: 0 20px 40px 0 rgb(234, 81, 239);
 }
